@@ -1,0 +1,15 @@
+# System / IDE files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Archive backups (avoid uploading huge files to git)
+*.zip
+*.rar
+*.tar.gz
+*.7z
+
+# Dependency folders
+node_modules/
+vendor/

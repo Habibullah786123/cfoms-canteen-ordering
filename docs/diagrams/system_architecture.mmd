@@ -1,0 +1,26 @@
+flowchart TB
+    subgraph Client
+        Browser[Web Browser]
+    end
+
+    subgraph Server ["Application Server - PHP"]
+        Auth[Auth Module]
+        User[User Module]
+        Canteen[Canteen Module]
+        Admin[Admin Module]
+        Core[Core: Session, Functions]
+    end
+
+    subgraph Database
+        MySQL[(MySQL DB)]
+    end
+
+    Browser --> Auth
+    Browser --> User
+    Browser --> Canteen
+    Browser --> Admin
+    Auth --> Core
+    User --> Core
+    Canteen --> Core
+    Admin --> Core
+    Core --> MySQL

@@ -1,0 +1,15 @@
+flowchart TD
+    A([Start]) --> B{Logged In?}
+    B -->|No| C[Login]
+    C --> B
+    B -->|Yes| D[Browse Menu]
+    D --> E[Add to Cart]
+    E --> F{More Items?}
+    F -->|Yes| D
+    F -->|No| G[Checkout]
+    G --> H[Order Created]
+    H --> I[Track Status]
+    I --> J{Completed?}
+    J -->|No| I
+    J -->|Yes| K[Rate Order]
+    K --> L([End])

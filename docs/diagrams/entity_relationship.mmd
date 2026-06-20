@@ -1,0 +1,42 @@
+erDiagram
+    USERS ||--o{ CANTEENS : owns
+    USERS ||--o{ ORDERS : places
+    USERS ||--o{ REVIEWS : writes
+    USERS ||--o{ MESSAGES : sends
+    CANTEENS ||--o{ MENU : has
+    CANTEENS ||--o{ ORDERS : receives
+    ORDERS ||--o| REVIEWS : has
+
+    USERS {
+        int id PK
+        string username
+        string role
+    }
+    CANTEENS {
+        int id PK
+        int owner_id FK
+        string name
+    }
+    MENU {
+        int id PK
+        int canteen_id FK
+        string name
+        decimal price
+    }
+    ORDERS {
+        int id PK
+        int user_id FK
+        int canteen_id FK
+        decimal total_price
+        string status
+    }
+    REVIEWS {
+        int id PK
+        int order_id FK
+        int rating
+    }
+    MESSAGES {
+        int id PK
+        int user_id FK
+        string subject
+    }
